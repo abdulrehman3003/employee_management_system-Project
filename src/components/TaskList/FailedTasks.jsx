@@ -11,7 +11,7 @@ const FailedTasks = () => {
             <p className="text-sm mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit ab, repudiandae possimus officiis iste quam.</p>
         
         <div className="mt-2">
-            <button className="w-full">Failed Task</button>
+            <button className="w-full bg-red-500">Failed Task</button>
         </div>
         
         </div>
