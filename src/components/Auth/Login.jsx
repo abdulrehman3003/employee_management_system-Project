@@ -1,19 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-const Login = ({handleLogin}) => {
+const Login = ({ handleLogin }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+  const submitHandler = (e) => {
+    e.preventDefault();
+    handleLogin(email, password);
+    // console.log(`email is ${email}`)
+    // console.log(`password is ${password}`)
 
-    const submitHandler = (e) => {
-        e.preventDefault()
-        handleLogin(email,password)
-        // console.log(`email is ${email}`)
-        // console.log(`password is ${password}`)
-
-        setEmail("")
-        setPassword("")
-    }
+    setEmail("");
+    setPassword("");
+  };
 
   return (
     <div className="flex h-screen w-screen items-center justify-center ">
@@ -27,20 +26,20 @@ const Login = ({handleLogin}) => {
           <input
             required
             value={email}
-            onChange={(e)=>{
-                setEmail(e.target.value)
+            onChange={(e) => {
+              setEmail(e.target.value);
             }}
-            className="border-2 border-emerald-600 rounded-full py-4 px-5 text-xl text-black outline-none bg-transparent placeholder:text-gray-400"
+            className="border-2 border-emerald-600 rounded-full py-4 px-5 text-xl  outline-none bg-transparent placeholder:text-gray-400"
             type="email"
             placeholder="Enter Your Email"
           />
           <input
             required
             value={password}
-            onChange={(e)=>{
-                setPassword(e.target.value)
+            onChange={(e) => {
+              setPassword(e.target.value);
             }}
-            className="border-2 border-emerald-600 rounded-full py-4 px-5 text-xl text-black outline-none bg-transparent placeholder:text-gray-400"
+            className="border-2 border-emerald-600 rounded-full py-4 px-5 text-xl outline-none bg-transparent placeholder:text-gray-400"
             type="password"
             placeholder="Enter Your Password"
           />
@@ -51,6 +50,6 @@ const Login = ({handleLogin}) => {
       </div>
     </div>
   );
-}
+};
 
-export default Login
+export default Login;
